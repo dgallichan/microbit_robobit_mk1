@@ -40,10 +40,18 @@ radio.onReceivedValueDeprecated(function (name, value) {
         }
     }
     if (name == "Go") {
-        robobit.goms(RBDirection.Forward, topSpeed * 100, value)
+        if (value >= 0) {
+            robobit.goms(RBDirection.Forward, topSpeed * 100, value)
+        } else {
+            robobit.goms(RBDirection.Reverse, topSpeed * 100, -1 * value)
+        }
     }
     if (name == "Rotate") {
-        robobit.rotatems(RBRobotDirection.Right, topSpeed * 100, value)
+        if (value >= 0) {
+            robobit.rotatems(RBRobotDirection.Right, topSpeed * 100, value)
+        } else {
+            robobit.rotatems(RBRobotDirection.Left, topSpeed * 100, -1 * value)
+        }
     }
 })
 let RightOutput = 0
@@ -64,7 +72,7 @@ basic.showLeds(`
     # . # . #
     . # . # .
     . . # . .
-    # # . # .
+    # # . # #
     # # # # #
     `)
 basic.forever(function () {
