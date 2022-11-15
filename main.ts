@@ -29,14 +29,14 @@ radio.onReceivedValueDeprecated(function (name, value) {
         robobit.stop(RBStopMode.Coast)
     } else {
         if (LeftOutput > 0) {
-            robobit.move(RBMotor.Left, RBDirection.Forward, topSpeed * LeftOutput)
+            robobit.move(RBMotor.Left, RBDirection.Forward, topSpeedAnalogue * LeftOutput)
         } else {
-            robobit.move(RBMotor.Left, RBDirection.Reverse, topSpeed * (-1 * LeftOutput))
+            robobit.move(RBMotor.Left, RBDirection.Reverse, topSpeedAnalogue * (-1 * LeftOutput))
         }
         if (RightOutput > 0) {
-            robobit.move(RBMotor.Right, RBDirection.Forward, topSpeed * RightOutput)
+            robobit.move(RBMotor.Right, RBDirection.Forward, topSpeedAnalogue * RightOutput)
         } else {
-            robobit.move(RBMotor.Right, RBDirection.Reverse, topSpeed * (-1 * RightOutput))
+            robobit.move(RBMotor.Right, RBDirection.Reverse, topSpeedAnalogue * (-1 * RightOutput))
         }
     }
     if (name == "Go") {
@@ -64,9 +64,11 @@ let RollRight = 0
 let RollLeft = 0
 let MappedRoll = 0
 let RawRoll = 0
+let topSpeedAnalogue = 0
 let topSpeed = 0
 radio.setGroup(1)
 topSpeed = 0.5
+topSpeedAnalogue = 1
 robobit.select_model(RBModel.Mk1)
 basic.showLeds(`
     # . # . #
