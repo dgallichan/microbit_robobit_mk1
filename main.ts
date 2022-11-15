@@ -34,9 +34,9 @@ radio.onReceivedValueDeprecated(function (name, value) {
             robobit.move(RBMotor.Left, RBDirection.Reverse, topSpeed * LeftOutput)
         }
         if (RightOutput > 0) {
-            robobit.move(RBMotor.Right, RBDirection.Forward, topSpeed * LeftOutput)
+            robobit.move(RBMotor.Right, RBDirection.Forward, topSpeed * RightOutput)
         } else {
-            robobit.move(RBMotor.Right, RBDirection.Reverse, topSpeed * LeftOutput)
+            robobit.move(RBMotor.Right, RBDirection.Reverse, topSpeed * RightOutput)
         }
     }
 })
