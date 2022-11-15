@@ -5,7 +5,7 @@ radio.onReceivedValueDeprecated(function (name, value) {
         RawRoll,
         -1000,
         1000,
-        0,
+        -100,
         100
         )
         RollLeft = MappedRoll
@@ -17,7 +17,7 @@ radio.onReceivedValueDeprecated(function (name, value) {
         RawPitch,
         1000,
         -1000,
-        0,
+        -100,
         100
         )
         PitchLeft = MappedPitch
