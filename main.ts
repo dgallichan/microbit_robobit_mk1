@@ -21,7 +21,7 @@ radio.onReceivedValueDeprecated(function (name, value) {
         100
         )
         PitchLeft = MappedPitch
-        PitchRight = 100 - MappedPitch
+        PitchRight = 0 - MappedPitch
     }
     LeftOutput = (PitchLeft + RollLeft) / 2
     RightOutput = (PitchRight + RollRight) / 2
