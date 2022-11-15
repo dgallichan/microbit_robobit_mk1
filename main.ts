@@ -15,8 +15,8 @@ radio.onReceivedValueDeprecated(function (name, value) {
         RawPitch = value
         MappedPitch = pins.map(
         RawPitch,
-        1000,
         -1000,
+        1000,
         -100,
         100
         )
