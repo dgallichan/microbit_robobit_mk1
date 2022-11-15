@@ -1,4 +1,6 @@
 radio.onReceivedValueDeprecated(function (name, value) {
+    topSpeed = 0.5
+    topSpeedAnalogue = 1
     if (name == "Turn") {
         RawRoll = value
         MappedRoll = pins.map(
@@ -74,12 +76,7 @@ basic.showLeds(`
     # . . # .
     # # # . .
     `)
-topSpeed = 0.5
-topSpeedAnalogue = 1
 robobit.select_model(RBModel.Mk1)
 basic.forever(function () {
 	
-})
-basic.forever(function () {
-    basic.pause(100)
 })
