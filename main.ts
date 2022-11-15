@@ -3,8 +3,8 @@ radio.onReceivedValueDeprecated(function (name, value) {
         RawRoll = value
         MappedRoll = pins.map(
         RawRoll,
-        -1000,
-        1000,
+        -90,
+        90,
         -100,
         100
         )
@@ -15,8 +15,8 @@ radio.onReceivedValueDeprecated(function (name, value) {
         RawPitch = value
         MappedPitch = pins.map(
         RawPitch,
-        -1000,
-        1000,
+        -90,
+        90,
         -100,
         100
         )
