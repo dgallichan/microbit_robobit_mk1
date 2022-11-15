@@ -26,7 +26,7 @@ radio.onReceivedValueDeprecated(function (name, value) {
     LeftOutput = (PitchLeft + RollLeft) / 2
     RightOutput = (PitchRight + RollRight) / 2
     if (RawPitch == 0 && RawRoll == 0) {
-        robobit.stop(RBStopMode.Coast)
+    	
     } else {
         if (LeftOutput > 0) {
             robobit.move(RBMotor.Left, RBDirection.Forward, topSpeed * LeftOutput)
@@ -38,6 +38,12 @@ radio.onReceivedValueDeprecated(function (name, value) {
         } else {
             robobit.move(RBMotor.Right, RBDirection.Reverse, topSpeed * (-1 * RightOutput))
         }
+    }
+    if (name == "Go") {
+        robobit.goms(RBDirection.Forward, topSpeed * 100, value)
+    }
+    if (name == "Rotate") {
+        robobit.rotatems(RBRobotDirection.Right, topSpeed * 100, value)
     }
 })
 let RightOutput = 0
@@ -52,13 +58,13 @@ let MappedRoll = 0
 let RawRoll = 0
 let topSpeed = 0
 radio.setGroup(1)
-topSpeed = 50
+topSpeed = 0.5
 robobit.select_model(RBModel.Mk1)
 basic.showLeds(`
     # . # . #
     . # . # .
     . . # . .
-    . # . # .
+    # # . # .
     # # # # #
     `)
 basic.forever(function () {
