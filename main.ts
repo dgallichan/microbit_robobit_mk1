@@ -66,17 +66,17 @@ let MappedRoll = 0
 let RawRoll = 0
 let topSpeedAnalogue = 0
 let topSpeed = 0
-radio.setGroup(1)
+radio.setGroup(0)
+basic.showLeds(`
+    # # # . .
+    # . . # .
+    # # # . .
+    # . . # .
+    # # # . .
+    `)
 topSpeed = 0.5
 topSpeedAnalogue = 1
 robobit.select_model(RBModel.Mk1)
-basic.showLeds(`
-    # . # . #
-    . # . # .
-    . . # . .
-    # # . # #
-    # # # # #
-    `)
 basic.forever(function () {
 	
 })
