@@ -9,7 +9,7 @@ radio.onReceivedValueDeprecated(function (name, value) {
         100
         )
         RollLeft = MappedRoll
-        RollRight = MappedRoll
+        RollRight = -1 * MappedRoll
     }
     if (name == "Drive") {
         RawPitch = value
@@ -21,12 +21,12 @@ radio.onReceivedValueDeprecated(function (name, value) {
         100
         )
         PitchLeft = MappedPitch
-        PitchRight = 0 - MappedPitch
+        PitchRight = MappedPitch
     }
     LeftOutput = (PitchLeft + RollLeft) / 2
     RightOutput = (PitchRight + RollRight) / 2
     if (RawPitch == 0 && RawRoll == 0) {
-    	
+        robobit.stop(RBStopMode.Coast)
     } else {
         if (LeftOutput > 0) {
             robobit.move(RBMotor.Left, RBDirection.Forward, topSpeed * LeftOutput)
